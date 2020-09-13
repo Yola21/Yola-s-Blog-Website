@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Posts</title>
+{% endblock head%}
+
+{% block body %}
+<br>
+<div class="text-center">
+    <h1 style="display:inline">All Posts</h1>
+    <a style="display:inline" class="btn btn-primary float-right" href="/posts/new">+ New Post</a>
+</div>
+    <hr>
+
+    {% for post in posts %}
+        <div class="card" style="width: 50%%;">
+            <div class="card-header" style="color=">
+                <h3>{{ post.title }}</h3>
+            </div>
+            <div class="card-body">
+                {% if post.author %}
+                    <small>Posted By: {{ post.author }} on {{ post.date_posted.strftime('%A, %d %B %Y %I:%M %p') }}</small>
+                {% else %}
+                    <small>By: Anonymous</small>
+                {% endif %}
+                <br>
+                <br>
+
+                <p style="white-space:pre-wrap">{{ post.content }}</p>
+                <a class="btn btn-danger" href='/posts/delete/{{ post.id }}'>Delete</a>
+                <a class="btn btn-info" href='/posts/edit/{{ post.id }}'>Edit</a>           
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock body %}

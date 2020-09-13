@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock head%}
+
+{% block body %}
+    <h1>Home Page</h1>
+    <main role="main">
+        <div class="jumbotron">
+          <div class="col-sm-8 mx-auto">
+            <h1>Welcome Peeps!</h1>
+            <p>Welcome to the Yola's Blog! I am glad to have a fine audience like you. I am here to tell you interesting facts, information, and also to provide you with a pinch of some extra knowledge regarding Computer Science.</p>
+            <p>If you want to find out from where I have learnt this, checkout this website <a href="https://www.cleverprogrammer.com/">cleverprogrammer.com</a> for more cool stuffs like this.</p>
+            <p>
+              <a class="btn btn-primary" href="/posts" role="button">Go to posts &raquo;</a>
+            </p>
+          </div>
+        </div>
+      </main>
+{% endblock body %}
